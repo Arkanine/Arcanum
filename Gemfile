@@ -8,15 +8,19 @@ gem 'rails', '4.0.1'
 
 gem 'sqlite3'
 
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem "activeadmin", git: "https://github.com/gregbell/active_admin"
 
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier', '>= 1.0.3'
 end
+
 gem 'execjs', group: :production
 gem 'jquery-rails'
+
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

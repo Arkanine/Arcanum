@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
 
   def index
-    @companies = Company.search(params[:search])
+    @companies = Company.order('name').paginate(per_page:3, page:params[:page]).search(params[:search])
   end
 
   def new
