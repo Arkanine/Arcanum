@@ -1,0 +1,14 @@
+<%= form_for([@rubric, @tag], :html => { :class => 'form-vertical answer-form' }) do |f| %>
+
+    <div class="form-group">
+      <%= f.text_field :name, placeholder: 'Комментарий', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_area :body, rows: 2, placeholder: 'Комментарий', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit 'Создать тег', class: 'btn btn-primary' %>
+    </div>
+<% end %>

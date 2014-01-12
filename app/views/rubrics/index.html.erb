@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Рубрики</h3>
+</div>
+
+<ol>
+  <% @rubrics.each do |rubric| %>
+    <li>
+      <%= link_to rubric.name, rubric %>
+
+      <% if rubric.tags.any? %>
+      <ul>
+        <% rubric.tags.each do |t| %>
+          <li><%= link_to t.name, t %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </li>
+    <br/>
+<% end %>
+</ol>
+
+<div class="page-header">
+  <h3>Последние 3 компании</h3>
+</div>
+
+<% comp = @companies.reverse[0..2] %>
+<% comp.each do |c| %>
+    <p>Название: <%= link_to c.name, c %></p>
+    <p>Адресса: <%= c.address %></p>
+    <p>Телефон: <%= c.phone %></p>
+    <br/>
+<% end %>
+
+

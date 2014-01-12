@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h3><%= link_to 'Рубрики', root_path %> > <%= link_to @company.tag.rubric.name, @company.tag.rubric %> > <%= link_to @company.tag.name, @company.tag %> > <%= @company.name %></h3>
+</div>
+
+<p>Название: <%= @company.name %></p>
+<p>Адресса: <%= @company.address %></p>
+<p>Телефон: <%= @company.phone %></p>
+
+<% if @company.user == current_user %>
+    <%= link_to 'Редактировать', edit_company_path(@company), class: 'btn btn-default btn-xs' %>
+    <%= link_to 'Удалить', @company, method: :delete, data: { confirm: 'Точно-точно?' }, class: 'btn btn-danger btn-xs' %>
+<% end %>

@@ -1,0 +1,15 @@
+<div class="page-header">
+  <h1>Вход</h1>
+</div>
+<div class="col-md-4">
+  <%= form_tag sessions_path do %>
+      <div class="form-group">
+        <%= text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email' %>
+      </div>
+      <div class="form-group">
+        <%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Пароль' %>
+      </div>
+      <div class="form-group"><%= submit_tag 'Войти', class: 'btn btn-primary' %></div>
+  <% end %>
+  <p>Новый пользователь? <%= link_to 'Регистрируйся!', registration_path %></p>
+</div>

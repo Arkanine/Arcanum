@@ -1,0 +1,15 @@
+<div class="page-header">
+  <h3><%= link_to 'Рубрики', root_path %> > <%= @rubric.name %></h3>
+</div>
+
+<ol>
+<% if @tags.where(rubric_id: @rubric.id).any? %>
+  <% tag = @tags.where(rubric_id: @rubric.id) %>
+  <% tag.each do |t| %>
+    <li><%= link_to t.name, t %></li>
+  <% end %>
+  <% else %>
+<% end %>
+</ol>
+
+

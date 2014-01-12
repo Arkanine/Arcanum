@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h3><%= link_to 'Рубрики', root_path %> > <%= link_to @tag.rubric.name, @tag.rubric %> > <%= @tag.name %></h3>
+</div>
+
+<ol>
+  <% if @companies.where(tag_id: @tag.id).any? %>
+      <% company = @companies.where(tag_id: @tag.id) %>
+      <% company.each do |c| %>
+
+          <li>
+
+            <p>Название: <%= link_to c.name, c %></p>
+            <p>Адресса: <%= c.address %></p>
+            <p>Телефон: <%= c.phone %></p>
+
+          </li>
+          <br/>
+      <% end %>
+  <% else %>
+  <% end %>
+</ol>
+
+<div class="page-header">
+  <h3>Новая компания</h3>
+</div>
+<%= render 'companies/form' %>
+
