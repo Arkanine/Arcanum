@@ -2,9 +2,13 @@ ActiveAdmin.register Company do
   permit_params :name, :address, :phone, :user_id, :tag_id
 
   index do
+    column :created_at
     column :name
     column :address
     column :phone
+    column :user
+    column :tag
+
 
     default_actions
   end

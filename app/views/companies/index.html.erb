@@ -1,0 +1,15 @@
+<div class="page-header">
+  <h3>Результат поиска</h3>
+</div>
+
+
+<% for company in @companies %>
+    <p><%= link_to company.name, company %></p>
+    <p><%= company.address %></p>
+    <p><%= company.phone %></p>
+    <br/>
+<% end %>
+
+<%= link_to 'На главную', root_path, class: 'btn btn-primary' %>
+
+

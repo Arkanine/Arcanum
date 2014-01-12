@@ -2,6 +2,10 @@ class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
 
+  def index
+    @companies = Company.search(params[:search])
+  end
+
   def new
     @tag = Tag.find(params[:tag_id])
     @company = Comment.new
@@ -20,6 +24,7 @@ class CompaniesController < ApplicationController
 
   def edit
     @tag = @company.tag
+    @button = 'Исправить компанию'
   end
 
   def update

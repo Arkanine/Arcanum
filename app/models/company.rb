@@ -3,4 +3,12 @@ class Company < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :tag
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ? OR address LIKE ? OR phone LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end

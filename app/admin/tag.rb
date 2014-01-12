@@ -1,9 +1,10 @@
 ActiveAdmin.register Tag do
-  permit_params :name, :body, :user_id, :rubric_id
+  permit_params :name, :body, :rubric_id
 
   index do
     column :name
     column :body
+    column :rubric
 
     default_actions
   end

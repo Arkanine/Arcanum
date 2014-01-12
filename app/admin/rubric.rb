@@ -1,5 +1,5 @@
 ActiveAdmin.register Rubric do
-  permit_params :name, :body, :user_id
+  permit_params :name, :body
 
   index do
     column :name

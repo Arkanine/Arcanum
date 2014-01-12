@@ -4,24 +4,21 @@
 
 <ol>
   <% if @companies.where(tag_id: @tag.id).any? %>
-      <% company = @companies.where(tag_id: @tag.id) %>
-      <% company.each do |c| %>
-
-          <li>
-
-            <p>Название: <%= link_to c.name, c %></p>
-            <p>Адресса: <%= c.address %></p>
-            <p>Телефон: <%= c.phone %></p>
-
-          </li>
-          <br/>
-      <% end %>
-  <% else %>
+    <% company = @companies.where(tag_id: @tag.id) %>
+    <% company.each do |c| %>
+      <li>
+        <p>Название: <%= link_to c.name, c %></p>
+        <p>Адресса: <%= c.address %></p>
+        <p>Телефон: <%= c.phone %></p>
+        </li>
+        <br/>
+    <% end %>
   <% end %>
 </ol>
 
-<div class="page-header">
-  <h3>Новая компания</h3>
-</div>
-<%= render 'companies/form' %>
-
+<% if current_user %>
+  <div class="page-header">
+    <h3>Новая компания</h3>
+  </div>
+  <%= render 'companies/form' %>
+<% end %>

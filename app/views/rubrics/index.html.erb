@@ -6,7 +6,6 @@
   <% @rubrics.each do |rubric| %>
     <li>
       <%= link_to rubric.name, rubric %>
-
       <% if rubric.tags.any? %>
       <ul>
         <% rubric.tags.each do |t| %>
@@ -25,10 +24,11 @@
 
 <% comp = @companies.reverse[0..2] %>
 <% comp.each do |c| %>
-    <p>Название: <%= link_to c.name, c %></p>
-    <p>Адресса: <%= c.address %></p>
-    <p>Телефон: <%= c.phone %></p>
-    <br/>
+  <p>Название: <%= link_to c.name, c %></p>
+  <p>Адресса: <%= c.address %></p>
+  <p>Телефон: <%= c.phone %></p>
+  <br/>
 <% end %>
+
 
 

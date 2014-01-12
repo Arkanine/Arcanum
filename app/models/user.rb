@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
                       too_short: 'Должен состоять из 5 символов и более!'
 
   has_many :companies
-  has_many :rubrics
-  has_many :tags
 
   def displayed_name
     name.split(' ').count == 2 ? name.split(' ')[0]+' '+name.split(' ')[1][0]+'.' : 'filtered name'

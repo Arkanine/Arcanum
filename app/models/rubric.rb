@@ -1,6 +1,5 @@
 class Rubric < ActiveRecord::Base
-  validates_presence_of :name, :body, :user_id
+  validates_presence_of :name
 
-  belongs_to :user
   has_many :tags, dependent: :destroy
 end

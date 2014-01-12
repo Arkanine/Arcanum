@@ -2,6 +2,7 @@ Arcanum::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   resources :rubrics do
     resources :tags
   end
@@ -19,6 +20,9 @@ Arcanum::Application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   root 'rubrics#index'
+
+  get 'about', to: 'pages#about'
+  get 'help', to: 'pages#help'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
