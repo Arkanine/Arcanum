@@ -4,7 +4,7 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     @company = Company.new
     @button = 'Создать компанию'
-    @companies = Company.order(:name).page(params[:page]).per(5)
+    @companies = Company.order(:name).page(params[:page]).per(10)
 
   end
 end

@@ -5,9 +5,9 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.search(params[:search])
     if @companies.class == Array
-      @companies = Kaminari.paginate_array(@companies).page(params[:page]).per(5)
+      @companies = Kaminari.paginate_array(@companies).page(params[:page]).per(10)
     else
-      @companies = @companies.page(params[:page]).per(5)
+      @companies = @companies.page(params[:page]).per(10)
     end
   end
 
