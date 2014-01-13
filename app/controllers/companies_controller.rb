@@ -34,7 +34,7 @@ class CompaniesController < ApplicationController
 
   def update
     if @company.update(company_params)
-      redirect_to @company.tag, notice: 'Тег обновлен'
+      redirect_to @company.tag, notice: 'Компания обновлена'
     else
       redirect_to :back, alert: 'Ошибка'
     end
