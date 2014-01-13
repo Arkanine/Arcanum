@@ -3,8 +3,8 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.find(params[:id])
     @company = Company.new
-    @companies = Company.all
     @button = 'Создать компанию'
-  end
+    @companies = Company.order(:name).page(params[:page]).per(5)
 
+  end
 end

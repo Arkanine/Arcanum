@@ -19,8 +19,7 @@ end
 gem 'execjs', group: :production
 gem 'jquery-rails'
 
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'kaminari'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

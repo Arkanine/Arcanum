@@ -10,11 +10,15 @@
         <p>Название: <%= link_to c.name, c %></p>
         <p>Адресса: <%= c.address %></p>
         <p>Телефон: <%= c.phone %></p>
-        </li>
-        <br/>
+      </li>
     <% end %>
   <% end %>
 </ol>
+
+<% if @tag.companies.count > 5 %>
+    <%= paginate @companies %>
+<% end %>
+<br/>
 
 <% if current_user %>
   <div class="page-header">

@@ -3,7 +3,12 @@ class CompaniesController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
 
   def index
-    @companies = Company.order('name').paginate(per_page:3, page:params[:page]).search(params[:search])
+    @companies = Company.search(params[:search])
+    if @companies.class == Array
+      @companies = Kaminari.paginate_array(@companies).page(params[:page]).per(5)
+    else
+      @companies = @companies.page(params[:page]).per(5)
+    end
   end
 
   def new
